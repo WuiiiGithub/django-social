@@ -66,8 +66,31 @@ pip install Pillow
 - `python manage.py runserver [port number]`: Starts the development server with a different address and port.
 - `python manage.py runserver --settings=myproject.settings.dev`: Uses a specific settings file.
 - `python manage.py shell --basic`: Starts a shell without loading models or apps.
+## More information
+### Routes
+Here are the links which might help you to atleast kinda know what is happening and get a big picture about the functionality of the project.
+- `http://localhost:8000/admin/`: This is for admin(8000 or your port number)
+- `http://localhost:8000/blog/`: For blogs
+- `http://localhost:8000/register/`: For signup page or register page
+- `http://localhost:8000/profile/`: For profile viewing and changes
+- `http://localhost:8000/login`: For logging in the site
+- `http://localhost:8000/logout`: Logout page (Currently making issues in newer version of django)
+- `http://localhost:8000/blog/post/create`: Can create your own new post.
+- `http://localhost:8000/blog/post/<post_number>`: Post detailed view
+- `http://localhost:8000/blog/post/<post_number>/update`: Update the already existing post
+- `http://localhost:8000/blog/post/<post_number>/delete`: Delete the post.
+### Ideas for further development
+You can do many things like:
+- Use nodejs, reactjs, js, bootstrap, css and html to enhance look and interactivity
+- Using other databases for large implementation
+- Adding different features and customization
 
 # Conclusion
-If you have a basic understanding of django then this might be very helpfull to you. If you are at the start and love making a site then you might need a tutorial to understand django and get some handson experience and then look at this repository.
+If you have a basic understanding of django then this might be very helpfull to you. If you are at the start and love making a site then you might need a tutorial to understand django and get some handson experience and then look at this repository. **Note: Don't forget to flush the database using the following commands.**
+```
+python manage.py flush
+python manage.py makemigrations
+python manage.py migrate
+```
 
 Thank you for reading this
