@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm, ProfileUpdateForm, UserUpdateForm
 from django.contrib.auth.decorators import login_required
+# import added
+from django.contrib.auth import logout
 
 def register(request):
     if request.method == 'POST':
@@ -35,3 +37,13 @@ def profile(request):
         'p_form':p_form
     }
     return render(request, "users/profile.html", context)
+
+def logout_user(request):
+    if request.user.is_authenticated:
+        logout(request)
+        # You can use messages -> import this first 'from django.contrib import messages'
+        # messages.success(request, ("Logged Out Successfully!"))
+        return redirect('home')
+    else :
+        # messages.info(request, ("You're Already Logged Out"))
+        return redirect('home')
